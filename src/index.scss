@@ -1,0 +1,111 @@
+$primary: #2581eb;
+$accent: #cca9cd;
+$bg-accent: #ebedf0;
+$disabled: #a6b8b7;
+$foreground: #457eba;
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(0deg,$primary,0.03%,$accent);
+    color: $foreground;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0 30px;
+    height: 100vh;
+    width: 200;
+    scroll-behavior: smooth;
+    overflow: hidden;
+}
+.quiz-container{
+    font-family: Arial, Helvetica, sans-serif;
+    width: 500px;
+    border-radius: 5px;
+    margin-top: 100px;
+    padding: 10px 60px;
+    box-sizing: border-box;
+    background: $bg-accent;
+    position: relative;
+    .active-question-no{
+        font-size: 30px;
+        color:$primary;
+    }
+    .total-question-no{
+        font-size: 15px;
+        color:$disabled;
+    }
+    h2{
+        font-size: 20px;
+        margin:0;
+    }
+    ul{
+        margin-top:20px;
+        margin-left:-40px;
+
+        li{
+            text-decoration:none;
+            list-style:none;
+            color:$foreground;
+            font-size: 17;
+            background: $bg-accent;
+            border:1px solid $disabled;
+            border-radius: 20px;
+            padding: 10px;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+        .selected-answer{
+            background:$primary;
+            border:1px solid $accent;
+            color:$bg-accent;
+
+        }
+
+        
+        
+        
+    }
+    .footer{
+        display: flex;
+        justify-content: flex-end;
+
+        button{
+            background: $foreground;
+            border-radius: 10px;
+            font-size: 18px;
+            color: $bg-accent;
+            padding: 10px 42px;
+            outline: none;
+            border:none;
+            margin-top: 15px;
+            cursor: pointer;
+            &:disabled{
+                background: $bg-accent;
+                color: $disabled;
+                cursor: not-allowed;
+             }
+         }
+         
+    }
+
+    .result{
+
+     
+        button{
+            background: $foreground;
+            border-radius: 10px;
+            font-size: 18px;
+            color: $bg-accent;
+            padding: 10px 42px;
+            outline: none;
+            border:none;
+            margin-top: 15px;
+            cursor: pointer;
+            &:disabled{
+                background: $bg-accent;
+                color: $disabled;
+                cursor: not-allowed;
+             }
+         }
+    }
+}

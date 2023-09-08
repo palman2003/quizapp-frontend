@@ -1,0 +1,21 @@
+$primary: #2581eb;
+$accent: #cca9cd;
+$bg-accent: #ebedf0;
+$disabled: #a6b8b7;
+$foreground: #457eba;
+
+.anwer-timer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid $disabled;
+    border-radius: 3px;
+    .progress{
+        height: 5px;
+        transition-duration: 1s;
+        width: 0;
+        transition-timing-function: linear;
+        background:$foreground ;
+    }
+}
