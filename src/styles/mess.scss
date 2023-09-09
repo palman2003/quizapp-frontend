@@ -8,7 +8,7 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     background: linear-gradient(0deg,$primary,0.03%,$accent);
     color: $foreground;
-    display: inline-flex;
+    display: flex;
     justify-content: center;
     margin: 0 auto;
     padding: 0 30px;
@@ -26,5 +26,9 @@ body{
         box-sizing: border-box;
         background: $bg-accent;
         position: relative;
+    }
+
+    p{
+        background: $bg-accent;
     }
 }
