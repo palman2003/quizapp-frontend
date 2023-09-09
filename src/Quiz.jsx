@@ -18,7 +18,7 @@ export const Quiz = () => {
 
   useEffect(() => {
     // Fetch questions from your API when the component mounts
-    axios.get("http://localhost:5000/api/questions")
+    axios.get("https://fodse-backend.onrender.com/api/questions")
       .then(response => {
         setQuestions(response.data);
       })
@@ -64,7 +64,7 @@ export const Quiz = () => {
 
   if (questions.length === 0) {
     return <div>
-      <br/><br/><br/><br/>Loading questions...</div>;
+      <br/><br/><br/><br/><br/>Loading questions...</div>;
   }
 
 const handleTimeUp=()=>{
