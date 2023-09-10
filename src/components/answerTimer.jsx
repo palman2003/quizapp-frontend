@@ -3,25 +3,24 @@
 import "./qtimer.scss"
 import { useEffect,useState,useRef } from "react";
 function AnswerTimer({duration,onTimeUp}){
-    const [counter,setCounter]=useState(0);
     const [progressLoaded,setProgressLoaded]=useState(0);
     const intervalRef=useRef();
-    useEffect(()=>{
-        intervalRef.current=setInterval(()=>{
-            setCounter((cur)=>cur+1);
-        },1000);
-        return()=>clearInterval(intervalRef.current)
-    },[]);
+    const counter = useRef(0);
+
 
     useEffect(()=>{
-        setProgressLoaded(100*(counter/duration));
-        if(counter===duration){
+        intervalRef.current=setInterval(()=>{
+            counter.current += 1;
+            setProgressLoaded(100*(counter.current/(duration-1)));
+            console.log(counter.current + "sec elapsed")
+            if(counter.current===duration){
                 clearInterval(intervalRef.current)
-                setTimeout(()=>{
-                    onTimeUp();
-                })
+                onTimeUp()
         }
-    },[counter,duration]);
+        },1000)
+        return ()=>clearInterval(intervalRef.current)
+    },[])
+
     return(
        <div className="anwer-timer">
         <div
